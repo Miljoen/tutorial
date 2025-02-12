@@ -12,7 +12,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build docker
       run: |
-        docker build . -t miljoen/$IMAGE_NAME
+        docker buildx create --use && \
+        docker build . --platform linux/arm64 -t miljoen/$IMAGE_NAME
+
     - name: run docker
       run: |
         docker run -d -p 8080:8080 miljoen/$IMAGE_NAME:latest && \
