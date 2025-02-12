@@ -9,13 +9,14 @@ db = client.student_db
 students_collection = db.students
 
 def add(student=None):
-    student_record = students_collection.find_one({
-        "first_name": student.first_name,
-        "last_name": student.last_name
-    })
-
-    if student_record:
-        return 'Student already exists', 409
+    # Always allow insert
+    # student_record = students_collection.find_one({
+    #     "first_name": student.first_name,
+    #     "last_name": student.last_name
+    # })
+    #
+    # if student_record:
+    #     return 'Student already exists', 409
 
     res = students_collection.insert_one(student.to_dict())
     student.student_id = str(res.inserted_id)
