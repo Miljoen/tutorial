@@ -15,7 +15,7 @@ def add(student=None):
     })
 
     if student_record:
-        return 'already exists', 409
+        return 'Student already exists', 409
 
     res = students_collection.insert_one(student.to_dict())
     student.student_id = str(res.inserted_id)
