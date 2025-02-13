@@ -26,7 +26,6 @@ paths:
         explode: false
         schema:
           type: string
-          format: uuid
       responses:
         "200":
           description: Successful operation
@@ -52,8 +51,7 @@ paths:
         style: simple
         explode: false
         schema:
-          type: number
-          format: integer
+          type: string
       responses:
         "200":
           description: Successful operation
@@ -86,7 +84,6 @@ paths:
             application/json:
               schema:
                 type: string
-                format: uuid
                 x-content-type: application/json
         "400":
           description: "invalid input, object invalid"
@@ -102,7 +99,7 @@ components:
       type: object
       properties:
         student_id:
-          type: integer
+          type: string
           example: 1
         first_name:
           type: string
@@ -115,7 +112,7 @@ components:
           items:
             $ref: '#/components/schemas/GradeRecord'
       example:
-        student_id: 1
+        student_id: "1"
         last_name: Doe
         grade_records:
         - grade: 0
