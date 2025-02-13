@@ -1530,7 +1530,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"student_id\": \"0\",\n    \"last_name\": \"last_name\",\n    \"grades\": {\n        \"key\": \"grades\"\n    },\n    \"first_name\": \"first_name\"\n}"
+									"raw": "{\n    \"student_id\": 0,\n    \"last_name\": \"last_name\",\n    \"grades\": {\n        \"key\": \"grades\"\n    },\n    \"first_name\": \"first_name\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/student",
