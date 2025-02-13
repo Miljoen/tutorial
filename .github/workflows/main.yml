@@ -20,12 +20,12 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         load: true
-        tags: $REPO_NAME/$IMAGE_NAME:build
+        tags: miljoen/student_service:build
 
 #      run: |
 #        docker buildx build \
 #          --platform linux/arm64 \
-#          -t $REPO_NAME/$IMAGE_NAME:latest \
+#          -t miljoen/student_service:latest \
 #          --load .
 
     - name: run docker
@@ -74,11 +74,11 @@ jobs:
 
 #    - name: Push image to docker hub Container Registry
 #      run: |
-#        docker push $REPO_NAME/$IMAGE_NAME:latest
+#        docker push miljoen/student_service:latest
 
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: $REPO_NAME/$IMAGE_NAME:latest
+        tags: miljoen/student_service:latest
