@@ -31,7 +31,7 @@ jobs:
     - name: run docker
       run: |
         docker compose -f compose.build.yml up -d && \
-        docker ps && sleep 5
+        sleep 5 && docker ps
 
     - name: "Check files existence"
       uses: andstor/file-existence-action@v2
