@@ -84,6 +84,7 @@ paths:
             application/json:
               schema:
                 type: string
+                format: string
                 x-content-type: application/json
         "400":
           description: "invalid input, object invalid"
@@ -100,13 +101,10 @@ components:
       properties:
         student_id:
           type: string
-          example: 1
         first_name:
           type: string
-          example: John
         last_name:
           type: string
-          example: Doe
         grade_records:
           type: array
           items:
@@ -131,7 +129,7 @@ components:
         grade:
           maximum: 10
           minimum: 0
-          type: integer
+          type: number
           format: float
       example:
         grade: 0
